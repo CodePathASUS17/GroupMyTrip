@@ -50,6 +50,10 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+## Brainstorming sheet 
+Here's the link to the project brainstorming sheet:
+https://docs.google.com/document/d/1zNRzGPyMdvsP0uP9Hr795AkyAmg1BH2Y0Ux3YJTSv24/edit
+
 ## Notes
 
 Describe any challenges encountered while building the app.
