@@ -1,7 +1,7 @@
 # GroupMyTrip
 Application that helps connect students with other students to plan group trips
 
-# Project 3 - *GroupMyTrip*
+# Group project - *GroupMyTrip*
 
 **GroupMyTrip** Application that helps connect students with other students to plan group trips.
 
