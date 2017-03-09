@@ -24,10 +24,15 @@ The following are **required** functionality:
  
 The following are the **optional** features:
 
+- [ ] Login authentication, authorization with university page
 - [ ] Task delegation
 - [ ] Push Notifications on approval/rejection
 - [ ] Reminders when the trip date gets closer
- 
+- [ ] Group members can add people by search
+- [ ] User can search based on trip name
+- [ ] Admin can remove anyone on the group
+- [ ] Video chat feature like Facetime
+
 The following are the **additional** features:
 
 - [ ] List anything else that you can get done to improve the app functionality!
