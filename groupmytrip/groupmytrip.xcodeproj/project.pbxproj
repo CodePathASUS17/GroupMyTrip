@@ -21,6 +21,7 @@
 		10EEE61D1E73AEA8007360F0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEE61C1E73AEA8007360F0 /* ProfileViewController.swift */; };
 		10EEE61F1E73AEB6007360F0 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEE61E1E73AEB6007360F0 /* TripDetailViewController.swift */; };
 		10EEE6211E73AEC3007360F0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EEE6201E73AEC3007360F0 /* ChatViewController.swift */; };
+		243AA5C21E73B77300FEB347 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243AA5C11E73B77300FEB347 /* ParseClient.swift */; };
 		3AE3C4D7EA5C08987EE8FB1B /* Pods_groupmytrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB329F47C600156A1F6D7D28 /* Pods_groupmytrip.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		10EEE61C1E73AEA8007360F0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		10EEE61E1E73AEB6007360F0 /* TripDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		10EEE6201E73AEC3007360F0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		243AA5C11E73B77300FEB347 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		9560F5883FD4EF794E59669D /* Pods-groupmytrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-groupmytrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-groupmytrip/Pods-groupmytrip.debug.xcconfig"; sourceTree = "<group>"; };
 		AB329F47C600156A1F6D7D28 /* Pods_groupmytrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_groupmytrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 		10EEE5FC1E73AE2D007360F0 /* groupmytrip */ = {
 			isa = PBXGroup;
 			children = (
+				243AA5C01E73B75200FEB347 /* Client API */,
 				10EEE60F1E73AE44007360F0 /* View Controllers */,
 				10EEE5FD1E73AE2D007360F0 /* AppDelegate.swift */,
 				10EEE5FF1E73AE2D007360F0 /* ViewController.swift */,
@@ -104,6 +107,14 @@
 				10EEE6201E73AEC3007360F0 /* ChatViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		243AA5C01E73B75200FEB347 /* Client API */ = {
+			isa = PBXGroup;
+			children = (
+				243AA5C11E73B77300FEB347 /* ParseClient.swift */,
+			);
+			name = "Client API";
 			sourceTree = "<group>";
 		};
 		35DDD02853C874E29910B0FD /* Frameworks */ = {
@@ -252,6 +263,7 @@
 				10EEE6191E73AE89007360F0 /* SearchViewController.swift in Sources */,
 				10EEE5FE1E73AE2D007360F0 /* AppDelegate.swift in Sources */,
 				10EEE6111E73AE5F007360F0 /* ExploreViewController.swift in Sources */,
+				243AA5C21E73B77300FEB347 /* ParseClient.swift in Sources */,
 				10EEE6151E73AE78007360F0 /* LoginViewController.swift in Sources */,
 				10EEE6131E73AE6D007360F0 /* YourGroupsViewController.swift in Sources */,
 				10EEE61D1E73AEA8007360F0 /* ProfileViewController.swift in Sources */,
@@ -420,6 +432,7 @@
 				10EEE60E1E73AE2D007360F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
