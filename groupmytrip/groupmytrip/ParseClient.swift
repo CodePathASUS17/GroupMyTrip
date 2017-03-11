@@ -10,6 +10,12 @@ import UIKit
 import Parse
 
 class ParseClient: NSObject {
+    
+    let userClass = "User"
+    let groupClass = "Group"
+    let messageClass = "Message"
+    let requestClass = "Request"
+    
     static var sharedInstance = Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
         configuration.applicationId = ""
         configuration.clientKey = ""
@@ -25,18 +31,29 @@ class ParseClient: NSObject {
         
     }
     
-    func updateUserInfo(user: PFUser, email: String, password: String, name: String, phone: String, bio: String, dob: Date, location: String, success: @escaping (PFUser) -> Void, failure: @escaping (Error) -> Void){
+    func updateUserInfo(user: User, success: @escaping (PFUser) -> Void, failure: @escaping (Error) -> Void){
         
     }
     
-    func createGroup(name: String, tripLocation: String, tripDate: Date, tripDuration: Int, admins: [PFUser], success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
+    func createGroup(group: Group, success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
         
     }
     
-    func updateGroupInfo(groupId: PFObject, name: String, tripLocation: String, tripDate: Date, tripDuration: Int, admins: [PFUser], success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
+    func updateGroupInfo(group: Group, success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
     }
     
-    func addGroupMember(user: PFUser, groudId: PFObject, canBringCar: Bool, canShellForGas: Bool, success: @escaping (Bool) -> Void,  failure: @escaping (Error) -> Void){
-        
+    func addGroupMember(user: User, group: Group, success: @escaping (Bool) -> Void,  failure: @escaping (Error) -> Void){
+    }
+    
+    func requestMembership(user: User, group: Group, canBringCar: Bool, canShellForGas: Bool, success: @escaping (Bool) -> Void,  failure: @escaping (Error) -> Void){
+    }
+    
+    func invite(from: User, to: User, group: Group, adminRequested: Bool, success: @escaping (Bool) -> Void,  failure: @escaping (Error) -> Void){
+    }
+    
+    func postChat(from: User, toUser: User?, toGroup: Group?, private: Bool, timestamp: Date, success: @escaping (PFObject) -> Void,  failure: @escaping (Error) -> Void){
+    }
+    
+    func getChat(user: User?, group: Group?, success: @escaping ([PFObject]) -> Void,  failure: @escaping (Error) -> Void){
     }
 }
