@@ -9,5 +9,9 @@
 import UIKit
 
 class Message: NSObject {
-
+    var from: User?
+    var toUser: User?
+    var toGroup: Group?
+    var privateChat: Bool?
+    var text: String?
 }

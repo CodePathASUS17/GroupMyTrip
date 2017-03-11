@@ -8,14 +8,20 @@
 
 import UIKit
 import Parse
+
 class Group: NSObject {
+    var id: String?
     var name: String?
     var tripLocation: String?
     var tripDate: Date?
     var tripDuration: Float?
-    var admins: [PFUser]?
+    var admins: [User]?
     
     init(group: PFObject){
+        if let id =  group["_id"] as? String{
+            self.id = id
+        }
+        
         if let name = group["name"] as? String{
             self.name = name
         }
@@ -35,7 +41,9 @@ class Group: NSObject {
         }
         
         if let admins = group["admins"] as? [PFUser]{
-            self.admins = admins
+            for admin in admins{
+                self.admins?.append(User(admins))
+            }
         }
         
     }
