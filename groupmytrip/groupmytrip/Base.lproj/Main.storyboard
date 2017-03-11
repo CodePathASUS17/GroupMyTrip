@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Explore View Controller-->
+        <scene sceneID="kfs-kd-RzK">
+            <objects>
+                <viewController id="UxF-jF-sRT" customClass="ExploreViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Gr-qO-oWS"/>
+                        <viewControllerLayoutGuide type="bottom" id="yc3-yN-Ga0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5f6-N5-Wdl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1g3-Ze-J2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="139"/>
+        </scene>
+        <!--Your Groups View Controller-->
+        <scene sceneID="hHa-69-3iF">
+            <objects>
+                <viewController id="vjs-eg-iH3" customClass="YourGroupsViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vBG-lQ-a9X"/>
+                        <viewControllerLayoutGuide type="bottom" id="hqc-n2-v3g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Txz-9y-Wdk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6g-Wb-gFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="137"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="nrg-HZ-xn0">
+            <objects>
+                <viewController id="Xti-lw-3N0" customClass="SettingsViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GqL-LO-3XC"/>
+                        <viewControllerLayoutGuide type="bottom" id="QWy-jz-iB7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cqh-JP-E1K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wer-AI-GbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="132"/>
+        </scene>
+        <!--Search Settings View Controller-->
+        <scene sceneID="QOa-eI-QBT">
+            <objects>
+                <viewController id="dbW-fh-7aH" customClass="SearchSettingsViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jtx-P3-sLa"/>
+                        <viewControllerLayoutGuide type="bottom" id="sPj-mT-Ttn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZGT-Ze-1rO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xO-em-FOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2718" y="124"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="mPY-SB-iON">
+            <objects>
+                <viewController id="qgt-WT-OUe" customClass="ProfileViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tCf-sT-yGA"/>
+                        <viewControllerLayoutGuide type="bottom" id="MR5-l8-yXd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZP-BG-LW8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeX-QI-R4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3383" y="119"/>
+        </scene>
+        <!--Trip Detail View Controller-->
+        <scene sceneID="FDa-jd-Dnf">
+            <objects>
+                <viewController id="3c8-oJ-suM" customClass="TripDetailViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nZU-6W-xqc"/>
+                        <viewControllerLayoutGuide type="bottom" id="moV-Cx-fUZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EVF-x8-Z8k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSf-f9-r0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4006" y="115"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="0D8-Qy-Myg">
+            <objects>
+                <viewController id="xqS-jE-tjU" customClass="ChatViewController" customModule="groupmytrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z20-ua-hOZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="GPF-FB-dlw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VfB-LJ-vEy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTL-hR-AdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4681" y="107"/>
+        </scene>
+    </scenes>
+</document>
