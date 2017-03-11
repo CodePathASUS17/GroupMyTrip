@@ -1,6 +1,8 @@
 # GroupMyTrip
 Application that helps connect students with other students to plan group trips
 
+Wireframes: https://xd.adobe.com/view/7cf79741-3cdb-4851-a2cc-fd103550f904/
+
 # Group project - *GroupMyTrip*
 
 **GroupMyTrip** Application that helps connect students with other students to plan group trips.
