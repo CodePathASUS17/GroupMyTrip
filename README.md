@@ -34,6 +34,7 @@ The following are the **optional** features:
 - [ ] User can search based on trip name
 - [ ] Admin can remove anyone on the group
 - [ ] Video chat feature like Facetime
+- [ ] Make trips public or private
 
 The following are the **additional** features:
 
