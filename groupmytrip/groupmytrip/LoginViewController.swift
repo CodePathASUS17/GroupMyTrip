@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -40,13 +41,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSignupTapped(_ sender: Any) {
         if validateFields() {
+            SVProgressHUD.show()
             let username = self.usernameTextfield.text!
             let password = self.passwordTextField.text!
             ParseClient.sharedInstance.signup(email: username, password: password, success: { (user: PFUser) in
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "loginSegue", sender: sender)
 //                print(user)
                 
             }) { (error: Error) in
+                SVProgressHUD.dismiss()
                 print(error.localizedDescription)
                 self.presentAlertController(title: "Error!", message: error.localizedDescription)
             }
@@ -55,11 +59,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func onLoginTapped(_ sender: Any) {
         if validateFields() {
+            SVProgressHUD.show()
             let username = self.usernameTextfield.text!
             let password = self.passwordTextField.text!
             
             ParseClient.sharedInstance.login(email: username, password: password, success: { (user: PFUser) in
-
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "loginSegue", sender: sender)
                 /*
                 print(user)
@@ -72,6 +77,7 @@ class LoginViewController: UIViewController {
                 })
                 */
             }) { (error: Error) in
+                SVProgressHUD.dismiss()
                 print(error.localizedDescription)
                 self.presentAlertController(title: "Error!", message: error.localizedDescription)
             }

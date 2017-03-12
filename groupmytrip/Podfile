@@ -8,5 +8,5 @@ target 'groupmytrip' do
   # Pods for groupmytrip
   pod 'Parse'
   pod 'AFNetworking'
-
+  pod 'SVProgressHUD'
 end
