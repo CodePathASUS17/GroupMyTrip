@@ -27,9 +27,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-<<<<<<< HEAD
-  
-=======
+
     
     func test(){
         /*
@@ -60,7 +58,7 @@ class LoginViewController: UIViewController {
     }
     
 
->>>>>>> d78fa23bcdbfd295e4a9076f729f0b1dab560736
+
     /*
     // MARK: - Navigation
 
