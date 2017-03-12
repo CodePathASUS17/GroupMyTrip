@@ -42,7 +42,7 @@ class Group: NSObject {
         
         if let admins = group["admins"] as? [PFUser]{
             for admin in admins{
-                self.admins?.append(User(admins))
+                self.admins?.append(User(user: admin))
             }
         }
         

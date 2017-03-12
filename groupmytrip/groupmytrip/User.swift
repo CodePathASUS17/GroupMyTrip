@@ -11,6 +11,7 @@ import Parse
 
 class User: NSObject {
     var id: String?
+    var username: String?
     var name: String?
     var dob: Date?
     var bio: String?
@@ -20,6 +21,8 @@ class User: NSObject {
         if let id = user["_id"] as? String{
             self.id = id
         }
+        
+        self.username = user.username
         
         if let name = user["name"] as? String{
             self.name = name
@@ -36,8 +39,9 @@ class User: NSObject {
         }
     }
     
-    init(id: String, name: String, date: Date, bio: String){
+    init(id: String, name: String, username: String, date: Date, bio: String){
         self.id = id
+        self.username = username
         self.name = name
         self.dob = date
         self.bio = bio

@@ -1,5 +1,5 @@
 //
-//  Request.swift
+//  GroupMembers.swift
 //  groupmytrip
 //
 //  Created by Satyam Jaiswal on 3/11/17.
@@ -8,12 +8,9 @@
 
 import UIKit
 
-class Request: NSObject {
-    var id: String?
-    var from: User?
-    var to: User?
+class GroupMembers: NSObject {
+    var userId: String?
     var groupId: String?
-    var invited: Bool?
     var canBringCar: Bool?
     var canShellForGas: Bool?
 }
