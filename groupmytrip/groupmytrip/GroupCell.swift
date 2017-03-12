@@ -8,8 +8,13 @@
 
 import UIKit
 
-class GroupViewCell: UITableViewCell {
+class GroupCell: UITableViewCell {
 
+  @IBOutlet weak var groupIcon: UIImageView!
+  @IBOutlet weak var groupName: UILabel!
+  @IBOutlet weak var destinationName: UILabel!
+  
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

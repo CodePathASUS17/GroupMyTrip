@@ -10,6 +10,13 @@ import UIKit
 
 class TripDetailViewController: UIViewController {
 
+  @IBOutlet weak var membersTable: UITableView!
+  @IBOutlet weak var groupChatTable: UITableView!
+  
+  @IBOutlet weak var tripNameL: UILabel!
+  @IBOutlet weak var tripDestL: UILabel!
+  @IBOutlet weak var tripDateL: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 

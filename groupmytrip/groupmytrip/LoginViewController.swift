@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+  @IBOutlet weak var userBox: UITextField!
+  @IBOutlet weak var passwordBox: UITextField!
+  @IBOutlet weak var signUpB: UIButton!
+  @IBOutlet weak var loginB: UIButton!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +25,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+  
     /*
     // MARK: - Navigation
 
