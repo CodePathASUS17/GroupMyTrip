@@ -9,6 +9,7 @@
 import UIKit
 
 class YourGroupsViewController: UIViewController {
+  @IBOutlet weak var groupsTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

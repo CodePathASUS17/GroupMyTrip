@@ -11,6 +11,11 @@ import Parse
 
 class LoginViewController: UIViewController {
 
+  @IBOutlet weak var userBox: UITextField!
+  @IBOutlet weak var passwordBox: UITextField!
+  @IBOutlet weak var signUpB: UIButton!
+  @IBOutlet weak var loginB: UIButton!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.test()
@@ -22,6 +27,9 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+<<<<<<< HEAD
+  
+=======
     
     func test(){
         /*
@@ -52,6 +60,7 @@ class LoginViewController: UIViewController {
     }
     
 
+>>>>>>> d78fa23bcdbfd295e4a9076f729f0b1dab560736
     /*
     // MARK: - Navigation
 
