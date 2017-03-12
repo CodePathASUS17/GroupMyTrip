@@ -19,10 +19,12 @@ class ParseClient: NSObject {
     static var sharedInstance = ParseClient()
     
     func login(email: String, password: String, success: @escaping (PFUser) -> Void, failure: @escaping (Error) -> Void){
+        print("login initiated...")
         PFUser.logInWithUsername(inBackground: email, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
                 failure(error)
             }else{
+                print("login successful!")
                 if let user = user{
                     success(user)
                 }
@@ -31,6 +33,7 @@ class ParseClient: NSObject {
     }
     
     func signup(email: String, password: String, success: @escaping (PFUser) -> Void, failure: @escaping (Error) -> Void){
+        print("sign-up initiated...")
         let newUser = PFUser()
         newUser.username = email
         newUser.password = password
@@ -39,6 +42,7 @@ class ParseClient: NSObject {
             if let error = error{
                 failure(error)
             }else{
+                print("sign-up successful!")
                 if signupSuccessful {
                     success(newUser)
                 }

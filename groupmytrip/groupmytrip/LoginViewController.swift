@@ -8,19 +8,21 @@
 
 import UIKit
 import Parse
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
-  @IBOutlet weak var userBox: UITextField!
-  @IBOutlet weak var passwordBox: UITextField!
-  @IBOutlet weak var signUpB: UIButton!
-  @IBOutlet weak var loginB: UIButton!
-  
+    
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    let alertController = UIAlertController(title: "Title", message: "message", preferredStyle: .alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.test()
-        
-        // Do any additional setup after loading the view.
+        self.setupAlertController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,36 +31,86 @@ class LoginViewController: UIViewController {
     }
 
     
-    func test(){
-        /*
-        ParseClient.sharedInstance.signup(email: "test@asu.edu", password: "test", success: { (user: PFUser) in
-            print("sign-up successful!")
-            print(user)
-            
-        }) { (error: Error) in
-            print(error.localizedDescription)
+    func setupAlertController(){
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
+            //            self.emailTextField.text = ""
+            //            self.passowrdTextfield.text = ""
         }
-        */
-        
-        ParseClient.sharedInstance.login(email: "test@asu.edu", password: "test", success: { (user: PFUser) in
-            print("login successful!")
-            print(user)
-            print(user.objectId!)
-            let new = User(id: user.objectId!, name: "test name", username: user.username!, date: Date(), bio: "this is bio")
-            ParseClient.sharedInstance.updateUserInfo(newUser: new, success: { (updatedUser: PFUser) in
-                print(updatedUser)
-            }, failure: { (error: Error) in
+        self.alertController.addAction(OKAction)
+    }
+    
+    @IBAction func onSignupTapped(_ sender: Any) {
+        if validateFields() {
+            SVProgressHUD.show()
+            let username = self.usernameTextfield.text!
+            let password = self.passwordTextField.text!
+            ParseClient.sharedInstance.signup(email: username, password: password, success: { (user: PFUser) in
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "loginSegue", sender: sender)
+//                print(user)
+                
+            }) { (error: Error) in
+                SVProgressHUD.dismiss()
                 print(error.localizedDescription)
-            })
-            
-            
-        }) { (error: Error) in
-            print(error.localizedDescription)
+                self.presentAlertController(title: "Error!", message: error.localizedDescription)
+            }
         }
     }
     
-
-
+    @IBAction func onLoginTapped(_ sender: Any) {
+        if validateFields() {
+            SVProgressHUD.show()
+            let username = self.usernameTextfield.text!
+            let password = self.passwordTextField.text!
+            
+            ParseClient.sharedInstance.login(email: username, password: password, success: { (user: PFUser) in
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "loginSegue", sender: sender)
+                /*
+                print(user)
+                print(user.objectId!)
+                let new = User(id: user.objectId!, name: "test name", username: user.username!, date: Date(), bio: "this is bio")
+                ParseClient.sharedInstance.updateUserInfo(newUser: new, success: { (updatedUser: PFUser) in
+                    print(updatedUser)
+                }, failure: { (error: Error) in
+                    print(error.localizedDescription)
+                })
+                */
+            }) { (error: Error) in
+                SVProgressHUD.dismiss()
+                print(error.localizedDescription)
+                self.presentAlertController(title: "Error!", message: error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func validateFields() -> Bool{
+        if let username = self.usernameTextfield.text{
+            if username.isEmpty {
+                self.presentAlertController(title: "Sorry!", message: "Username is required")
+                return false
+            }else{
+                if !username.hasSuffix(".edu") {
+                    self.presentAlertController(title: "Error!", message: ".edu email-id required")
+                    return false
+                }
+            }
+        }else if let password = self.passwordTextField.text{
+            if password.isEmpty{
+                self.presentAlertController(title: "Sorry!", message: "Password is required")
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func presentAlertController(title: String, message: String){
+        self.alertController.title = title
+        self.alertController.message = message
+        self.present(self.alertController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
