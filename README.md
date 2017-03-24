@@ -14,7 +14,7 @@ Time spent: **X** hours spent in total
 The following are **required** functionality:
 
 - [ ] Students and login with their edu email ids
-- [ ] User can create a trip with atleast two people on the group
+- [ ] User can create a trip with at least two people on the group
 - [ ] A trip plan should have minimum information - Location, Date, duration of trip
 - [ ] User can swipe left/right on the trip proposal
 - [ ] Admin of the trip can approve/reject join request
@@ -56,6 +56,27 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Brainstorming sheet 
 Here's the link to the project brainstorming sheet:
 https://docs.google.com/document/d/1zNRzGPyMdvsP0uP9Hr795AkyAmg1BH2Y0Ux3YJTSv24/edit
+
+## Data Schema
+User Table: 
+
+userId: int | firstName: String | lastName: String | username: String | password: String (encoded) | university: String | email: String (email) | gender: bool | bio: String | birthDate: Date
+-------- | ---------- | -------- | -------- | --------- | -------- | ------- | ------- | ------ | ------
+
+Trip Table:
+
+tripId: int | tripName: String | endLocation: PFGeoPoint  | startLocation: PFGeoPoint | startDate: Date | endDate: Date | groupIcon: PFFile (Image) | media: [PFFile] | messages: [Message]
+------ | ------ | -------- | -------- | --------- | -------- | ------- | -------- | ---------
+
+Association Table:
+
+tripId: int | userId: int | membershipType: enum (int) | hasCar: bool | payGas: bool
+----- | ------- | ------- | ------- | -------
+
+Message:
+
+messageId: int | text: String | author: int (userId) | timestamp: Date
+------ | ------ | ------- | ---------
 
 ## Notes
 
