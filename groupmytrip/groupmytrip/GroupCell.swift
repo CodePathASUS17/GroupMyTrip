@@ -10,9 +10,11 @@ import UIKit
 
 class GroupCell: UITableViewCell {
 
-  @IBOutlet weak var groupIcon: UIImageView!
-  @IBOutlet weak var groupName: UILabel!
-  @IBOutlet weak var destinationName: UILabel!
+    @IBOutlet weak var groupIcon: UIImageView!
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+
   
   
     override func awakeFromNib() {

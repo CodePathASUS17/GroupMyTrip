@@ -12,10 +12,12 @@ import Parse
 class Group: NSObject {
     var id: String?
     var name: String?
-    var tripLocation: String?
+    var tripStart: String?
+    var tripDestination: String?
     var tripDate: Date?
     var tripDuration: Float?
     var admins: [User]?
+    var picture: PFFile?
     
     init(group: PFObject){
         if let id =  group["_id"] as? String{
@@ -26,13 +28,17 @@ class Group: NSObject {
             self.name = name
         }
         
-        if let location = group["trip_location"] as? String{
-            self.tripLocation = location
+        if let location = group["trip_start"] as? String{
+            self.tripStart = location
+        }
+        
+        if let location = group["trip_destination"] as? String {
+            self.tripDestination = location
         }
         
         if let dateString = group["trip_date"] as? String{
             let formatter = DateFormatter()
-            formatter.dateFormat = ""
+            formatter.dateFormat = "" // TODO: Finish formatting date
             self.tripDate = formatter.date(from: dateString)
         }
         
@@ -44,6 +50,10 @@ class Group: NSObject {
             for admin in admins{
                 self.admins?.append(User(user: admin))
             }
+        }
+        
+        if let picture = group["picture"] as? PFFile {
+            self.picture = picture
         }
         
     }

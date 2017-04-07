@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Parse
 
-class YourGroupsViewController: UIViewController {
-  @IBOutlet weak var groupsTable: UITableView!
+class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var groupsTable: UITableView!
+    
+    var groups: [Group]?
+    let userId: Int
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        var groupIds = [Int]()
+        ParseClient.sharedInstance.getYourGroupIds(userId: userId, success: { (ids: [PFObject]) in
+            for id in ids {
+                groupIds.append(id["trip_id"] as! Int)
+            }
+        }) { (error: Error) in
+            print(error.localizedDescription)
+        }
+        
+        ParseClient.sharedInstance.getGroups(groupIds: groupIds, success: { (groups: [PFObject]) in
+            for newGroup in groups {
+                self.groups?.append(Group(group: newGroup))
+            }
+        }) { (error: Error) in
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +43,24 @@ class YourGroupsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.groups != nil {
+            return (self.groups?.count)!
+        }
+        
+        return 0
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = groupsTable.dequeueReusableCell(withIdentifier: "groupCell") as! GroupCell
+        groups?[indexPath.row].picture?.getDataInBackground(block: { (imageData: Data?, error: Error?) in
+            if (error == nil) {
+                let image = UIImage(data: imageData!)
+                cell.groupIcon?.image = image
+            }
+        })
+        cell.groupNameLabel.text = groups?[indexPath.row].name!
+        cell.destinationLabel.text = groups?[indexPath.row].tripDestination!
+        cell.dateLabel.text = String(describing: groups?[indexPath.row].tripDate!)
+    }
 }

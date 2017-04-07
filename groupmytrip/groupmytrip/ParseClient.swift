@@ -289,6 +289,36 @@ class ParseClient: NSObject {
         }
     }
     
+    func getYourGroupIds(userId: Int, success: @escaping ([PFObject]) -> Void, failure: @escaping (Error) -> Void) {
+        let query = PFQuery(className: "Association")
+        query.whereKey("user_id", equalTo: userId)
+        query.includeKey("trip_id")
+        query.findObjectsInBackground { (groupIds: [PFObject]?, error: Error?) in
+            if (error != nil) {
+                failure(error!)
+            } else {
+                if let groupIds = groupIds {
+                    success(groupIds)
+                }
+            }
+        }
+    }
+    
+    func getGroups(groupIds: [Int], success: @escaping ([PFObject]) -> Void, failure: @escaping (Error) -> Void) {
+        let query = PFQuery(className: "Group")
+        query.whereKey("group_id", containedIn: groupIds)
+        query.includeKeys(["group_id", "name", "trip_location", "trip_date", "trip_duration", "admins"])
+        query.findObjectsInBackground { (groups: [PFObject]?, error: Error?) in
+            if (error != nil) {
+                failure(error!)
+            } else {
+                if let groups = groups {
+                    success(groups)
+                }
+            }
+        }
+    }
+    
     /*
     func getPrivateMessages(groupId: String, success: @escaping ([PFObject]) -> Void,  failure: @escaping (Error) -> Void){
         let query = PFQuery(className: "Message")
