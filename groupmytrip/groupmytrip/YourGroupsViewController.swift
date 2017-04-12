@@ -5,17 +5,17 @@
 //  Created by Diana C on 3/10/17.
 //  Copyright © 2017 Diana C. All rights reserved.
 //
-
 import UIKit
 import Parse
 
 class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var groupsTable: UITableView!
-
+    
     
     var groups: [Group]?
-    let userId: Int! = 0
-
+    var pfUser: PFUser?
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,9 +24,11 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         groupsTable.delegate = self
         groupsTable.dataSource = self
         
-        var groupIds = [Int]()
+        self.pfUser = ParseClient.sharedInstance.currentUser()
+        self.user = User(user: pfUser!)
         
-        ParseClient.sharedInstance.getYourGroupIds(userId: userId, success: { (ids: [PFObject]) in
+        var groupIds = [Int]()
+        ParseClient.sharedInstance.getYourGroupIds(userId: Int((user?.id)!)!, success: { (ids: [PFObject]) in
             for id in ids {
                 groupIds.append(id["trip_id"] as! Int)
             }
@@ -43,9 +45,8 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         }) { (error: Error) in
             print(error.localizedDescription)
         }
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
