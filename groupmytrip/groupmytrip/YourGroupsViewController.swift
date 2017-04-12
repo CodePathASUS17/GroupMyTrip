@@ -27,6 +27,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.pfUser = ParseClient.sharedInstance.currentUser()
         self.user = User(user: pfUser!)
+        self.user?.id = "0001"
         
         var groupIds = [Int]()
         ParseClient.sharedInstance.getYourGroupIds(userId: Int((user?.id)!)!, success: { (ids: [PFObject]) in
