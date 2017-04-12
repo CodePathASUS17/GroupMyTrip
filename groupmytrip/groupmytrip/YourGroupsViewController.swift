@@ -14,7 +14,8 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     
     var groups: [Group]?
-    let userId: Int! = nil
+    var pfUser: PFUser?
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,11 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         groupsTable.delegate = self
         groupsTable.dataSource = self
         
+        self.pfUser = ParseClient.sharedInstance.currentUser()
+        self.user = User(user: pfUser!)
+        
         var groupIds = [Int]()
-        ParseClient.sharedInstance.getYourGroupIds(userId: userId, success: { (ids: [PFObject]) in
+        ParseClient.sharedInstance.getYourGroupIds(userId: Int((user?.id)!)!, success: { (ids: [PFObject]) in
             for id in ids {
                 groupIds.append(id["trip_id"] as! Int)
             }

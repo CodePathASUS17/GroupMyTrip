@@ -18,6 +18,15 @@ class ParseClient: NSObject {
     
     static var sharedInstance = ParseClient()
     
+    func currentUser() -> PFUser? {
+        let currentUser = PFUser.current()
+        if (currentUser != nil) {
+            return currentUser!
+        }
+        
+        return nil
+    }
+    
     func login(email: String, password: String, success: @escaping (PFUser) -> Void, failure: @escaping (Error) -> Void){
         print("login initiated...")
         PFUser.logInWithUsername(inBackground: email, password: password) { (user: PFUser?, error: Error?) in
