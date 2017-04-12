@@ -14,7 +14,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     
     var groups: [Group]?
-    let userId: Int! = nil
+    let userId: Int! = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         groupsTable.dataSource = self
         
         var groupIds = [Int]()
+        
         ParseClient.sharedInstance.getYourGroupIds(userId: userId, success: { (ids: [PFObject]) in
             for id in ids {
                 groupIds.append(id["trip_id"] as! Int)
@@ -42,6 +43,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         }) { (error: Error) in
             print(error.localizedDescription)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
