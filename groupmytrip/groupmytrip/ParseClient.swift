@@ -86,11 +86,12 @@ class ParseClient: NSObject {
         })
     }
     
-    func createGroup(name: String, location: String, date: Date, duration: Float, admins: [String], success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
+    func createGroup(name: String, location: String, destination: String, date: Date, duration: Float, admins: [String], success: @escaping (PFObject) -> Void, failure: @escaping (Error) -> Void){
         
         let newGroup = PFObject(className: groupClass)
         newGroup.setObject(name, forKey: "name")
-        newGroup.setObject(location, forKey: "trip_location")
+        newGroup.setObject(location, forKey: "trip_start")
+        newGroup.setObject(destination, forKey: "trip_destination")
         newGroup.setObject(date, forKey: "trip_date")
         newGroup.setObject(duration, forKey: "trip_duration")
         newGroup.setObject(admins, forKey: "admins")
@@ -116,8 +117,12 @@ class ParseClient: NSObject {
                         grpObj.setObject(name, forKey: "name")
                     }
                     
-                    if let location = group.tripLocation {
-                        grpObj.setObject(location, forKey: "trip_location")
+                    if let location = group.tripStart {
+                        grpObj.setObject(location, forKey: "trip_start")
+                    }
+                    
+                    if let destination = group.tripDestination {
+                        grpObj.setObject(destination, forKey: "trip_destination")
                     }
                     
                     if let date = group.tripDate {
@@ -307,7 +312,7 @@ class ParseClient: NSObject {
     func getGroups(groupIds: [Int], success: @escaping ([PFObject]) -> Void, failure: @escaping (Error) -> Void) {
         let query = PFQuery(className: "Group")
         query.whereKey("group_id", containedIn: groupIds)
-        query.includeKeys(["group_id", "name", "trip_location", "trip_date", "trip_duration", "admins"])
+        query.includeKeys(["group_id", "name", "trip_start", "trip_destination", "trip_date", "trip_duration", "admins"])
         query.findObjectsInBackground { (groups: [PFObject]?, error: Error?) in
             if (error != nil) {
                 failure(error!)
