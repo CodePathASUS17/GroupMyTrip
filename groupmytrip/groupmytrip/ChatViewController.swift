@@ -7,21 +7,97 @@
 //
 
 import UIKit
+import Parse
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+  @IBOutlet weak var inputField: UITextField!
+  @IBOutlet weak var messagesTable: UITableView!
+  
+  var messages : [Message]!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+      let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.dismissKeyboard))
+      view.addGestureRecognizer(tap)
+      
+      messagesTable.delegate = self
+      messagesTable.dataSource = self
+      messagesTable.rowHeight = UITableViewAutomaticDimension
+      // messagesTable.estimatedRowHeight =
+      
+      Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if messages != nil {
+      return messages.count
+    }
+    else {
+      return 0
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = messageTable.dequeueReusableCell(withIdentifier: "mesCell") as! messagesViewCell
+    let corMes = messages[indexPath.row]
+    let realMes = corMes.text
+    let fUser = corMes.from
+    let tUser = corMes.toUser
+    let tGroup = corMes.toGroup
+    let 
     
+    
+    if user?.username != nil {
+      cell.mesLabel.text = "\(user!.username!): \(realMes!)"
+    }
+    else {
+      cell.mesLabel.text = "\(realMes!)"
+    }
+    
+    return cell
+  }
+  
+  func onTimer()
+  {
+    var query = PFQuery(className: "Message")
+    
+    query.order(byDescending: "createdAt")
+    
+    query.includeKey("text")
+    query.includeKey("user")
+    
+    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+      if error == nil {
+        if let objects = objects {
+          messages = objects
+        }
+      } else {
+        //
+      }
+    }
+    messageTable.reloadData()
+  }
+  
+  
+  @IBAction func exitChat(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+  }
 
+  @IBAction func sendMes(_ sender: Any) {
+    
+  }
+  
+  func dismissKeyboard() {
+    view.endEditing(true)
+  }
     /*
     // MARK: - Navigation
 

@@ -116,7 +116,7 @@ class ParseClient: NSObject {
                         grpObj.setObject(name, forKey: "name")
                     }
                     
-                    if let location = group.tripLocation {
+                    if let location = group.tripDestination {
                         grpObj.setObject(location, forKey: "trip_location")
                     }
                     

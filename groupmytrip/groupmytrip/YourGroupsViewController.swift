@@ -12,8 +12,8 @@ import Parse
 class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var groupsTable: UITableView!
     
-    var groups: [Group]?
-    let userId: Int
+    var groups: [Group]!
+    var userId: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +62,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.groupNameLabel.text = groups?[indexPath.row].name!
         cell.destinationLabel.text = groups?[indexPath.row].tripDestination!
         cell.dateLabel.text = String(describing: groups?[indexPath.row].tripDate!)
+      
+        return cell
     }
 }
