@@ -12,8 +12,8 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
-    
-    @IBOutlet weak var usernameTextfield: UITextField!
+
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -23,6 +23,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupAlertController()
+        
+        loginButton.isEnabled = false
+        signupButton.isEnabled = false
+        
+        usernameTextField.addTarget(self, action: #selector(LoginViewController.onEditChange), for: .allEditingEvents)
+        passwordTextField.addTarget(self, action: #selector(LoginViewController.onEditChange), for: .allEditingEvents)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +36,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func onEditChange() {
+        if !(usernameTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)! && (usernameTextField.text?.hasSuffix(".edu"))! {
+            loginButton.isEnabled = true
+            signupButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+            signupButton.isEnabled = false
+        }
+    }
     
     func setupAlertController(){
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
@@ -42,7 +57,7 @@ class LoginViewController: UIViewController {
     @IBAction func onSignupTapped(_ sender: Any) {
         if validateFields() {
             SVProgressHUD.show()
-            let username = self.usernameTextfield.text!
+            let username = self.usernameTextField.text!
             let password = self.passwordTextField.text!
             ParseClient.sharedInstance.signup(email: username, password: password, success: { (user: PFUser) in
                 SVProgressHUD.dismiss()
@@ -60,7 +75,7 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginTapped(_ sender: Any) {
         if validateFields() {
             SVProgressHUD.show()
-            let username = self.usernameTextfield.text!
+            let username = self.usernameTextField.text!
             let password = self.passwordTextField.text!
             
             ParseClient.sharedInstance.login(email: username, password: password, success: { (user: PFUser) in
@@ -86,7 +101,7 @@ class LoginViewController: UIViewController {
     }
     
     func validateFields() -> Bool{
-        if let username = self.usernameTextfield.text{
+        if let username = self.usernameTextField.text{
             if username.isEmpty {
                 self.presentAlertController(title: "Sorry!", message: "Username is required")
                 return false
