@@ -130,7 +130,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PpX-0G-1L5" id="prG-lE-RkP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroupTrip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5S-5D-8XN">
@@ -204,7 +204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VQj-bG-uCC" id="kHE-Lf-Pa0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroupTrip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-1c-9f0">
@@ -254,7 +254,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JFK-wa-10h"/>
                     <connections>
-                        <outlet property="groupsTable" destination="yXW-PL-kiQ" id="1CI-7h-mbZ"/>
+                        <outlet property="groupsTable" destination="yXW-PL-kiQ" id="sEK-Y5-2Si"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6g-Wb-gFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -354,7 +354,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8zU-CJ-IeQ" id="qnq-J1-KvG">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNG-bF-qZm">
@@ -434,7 +434,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KIN-ck-NbC" id="wvn-6h-bfY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>

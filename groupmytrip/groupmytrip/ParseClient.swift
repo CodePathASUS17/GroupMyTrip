@@ -42,8 +42,8 @@ class ParseClient: NSObject {
             if let error = error{
                 failure(error)
             }else{
-                print("sign-up successful!")
                 if signupSuccessful {
+                    print("sign-up successful!")
                     success(newUser)
                 }
             }

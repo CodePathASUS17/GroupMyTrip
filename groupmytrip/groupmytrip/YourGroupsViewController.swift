@@ -11,14 +11,18 @@ import Parse
 
 class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var groupsTable: UITableView!
+
     
     var groups: [Group]?
-    let userId: Int
+    let userId: Int! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        groupsTable.delegate = self
+        groupsTable.dataSource = self
         
         var groupIds = [Int]()
         ParseClient.sharedInstance.getYourGroupIds(userId: userId, success: { (ids: [PFObject]) in
@@ -33,6 +37,8 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
             for newGroup in groups {
                 self.groups?.append(Group(group: newGroup))
             }
+            self.groupsTable.reloadData()
+            
         }) { (error: Error) in
             print(error.localizedDescription)
         }
@@ -62,5 +68,7 @@ class YourGroupsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.groupNameLabel.text = groups?[indexPath.row].name!
         cell.destinationLabel.text = groups?[indexPath.row].tripDestination!
         cell.dateLabel.text = String(describing: groups?[indexPath.row].tripDate!)
+        
+        return cell
     }
 }
