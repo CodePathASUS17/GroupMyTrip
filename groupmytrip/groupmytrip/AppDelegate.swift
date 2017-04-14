@@ -22,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "http://lit-tor-64973.herokuapp.com/parse"
         })
         )
+        
+        UITabBar.appearance().tintColor = UIColor(red: 1/255, green: 217/255, blue: 137/255, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 1/255, green: 217/255, blue: 137/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+        // Override point for customization after application launch.
+        UINavigationBar.appearance().barStyle = .blackOpaque
+        
         return true
     }
 

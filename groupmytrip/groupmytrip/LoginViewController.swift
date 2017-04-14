@@ -126,6 +126,11 @@ class LoginViewController: UIViewController {
         self.alertController.message = message
         self.present(self.alertController, animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 

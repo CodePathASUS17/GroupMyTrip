@@ -28,6 +28,10 @@
 		243AA5CB1E74416000FEB347 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243AA5CA1E74416000FEB347 /* Request.swift */; };
 		243AA5CD1E74BED800FEB347 /* GroupMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243AA5CC1E74BED800FEB347 /* GroupMembers.swift */; };
 		3AE3C4D7EA5C08987EE8FB1B /* Pods_groupmytrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB329F47C600156A1F6D7D28 /* Pods_groupmytrip.framework */; };
+		435C73061EA06B26002810CF /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435C73051EA06B26002810CF /* CreateGroupViewController.swift */; };
+		435C73081EA097FD002810CF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435C73071EA097FD002810CF /* LocationViewController.swift */; };
+		435C730A1EA0A75B002810CF /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435C73091EA0A75B002810CF /* MemberViewController.swift */; };
+		435C730C1EA0A767002810CF /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435C730B1EA0A767002810CF /* AddMemberViewController.swift */; };
 		C177DCD41E74BDC6004BB275 /* GroupMemberViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177DCD31E74BDC6004BB275 /* GroupMemberViewCell.swift */; };
 		C177DCD61E74CAEA004BB275 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177DCD51E74CAEA004BB275 /* GroupCell.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		243AA5C81E74414600FEB347 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		243AA5CA1E74416000FEB347 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		243AA5CC1E74BED800FEB347 /* GroupMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembers.swift; sourceTree = "<group>"; };
+		435C73051EA06B26002810CF /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		435C73071EA097FD002810CF /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		435C73091EA0A75B002810CF /* MemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		435C730B1EA0A767002810CF /* AddMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
 		9560F5883FD4EF794E59669D /* Pods-groupmytrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-groupmytrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-groupmytrip/Pods-groupmytrip.debug.xcconfig"; sourceTree = "<group>"; };
 		AB329F47C600156A1F6D7D28 /* Pods_groupmytrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_groupmytrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C177DCD31E74BDC6004BB275 /* GroupMemberViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +130,10 @@
 				10EEE61C1E73AEA8007360F0 /* ProfileViewController.swift */,
 				10EEE61E1E73AEB6007360F0 /* TripDetailViewController.swift */,
 				10EEE6201E73AEC3007360F0 /* ChatViewController.swift */,
+				435C73051EA06B26002810CF /* CreateGroupViewController.swift */,
+				435C73071EA097FD002810CF /* LocationViewController.swift */,
+				435C73091EA0A75B002810CF /* MemberViewController.swift */,
+				435C730B1EA0A767002810CF /* AddMemberViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -286,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435C73081EA097FD002810CF /* LocationViewController.swift in Sources */,
 				243AA5C51E74411700FEB347 /* User.swift in Sources */,
+				435C730A1EA0A75B002810CF /* MemberViewController.swift in Sources */,
 				243AA5CD1E74BED800FEB347 /* GroupMembers.swift in Sources */,
 				243AA5CB1E74416000FEB347 /* Request.swift in Sources */,
 				10EEE61F1E73AEB6007360F0 /* TripDetailViewController.swift in Sources */,
@@ -294,8 +308,10 @@
 				243AA5C91E74414600FEB347 /* Group.swift in Sources */,
 				10EEE6211E73AEC3007360F0 /* ChatViewController.swift in Sources */,
 				10EEE6191E73AE89007360F0 /* SearchViewController.swift in Sources */,
+				435C730C1EA0A767002810CF /* AddMemberViewController.swift in Sources */,
 				10EEE5FE1E73AE2D007360F0 /* AppDelegate.swift in Sources */,
 				C177DCD61E74CAEA004BB275 /* GroupCell.swift in Sources */,
+				435C73061EA06B26002810CF /* CreateGroupViewController.swift in Sources */,
 				10EEE6111E73AE5F007360F0 /* ExploreViewController.swift in Sources */,
 				243AA5C21E73B77300FEB347 /* ParseClient.swift in Sources */,
 				10EEE6151E73AE78007360F0 /* LoginViewController.swift in Sources */,
