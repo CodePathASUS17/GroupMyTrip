@@ -26,7 +26,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
       messagesTable.delegate = self
       messagesTable.dataSource = self
       messagesTable.rowHeight = UITableViewAutomaticDimension
-      // messagesTable.estimatedRowHeight =
       
       Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
     }
@@ -46,20 +45,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = messageTable.dequeueReusableCell(withIdentifier: "mesCell") as! messagesViewCell
+    let cell = messagesTable.dequeueReusableCell(withIdentifier: "mesCell") as! messagesViewCell
     let corMes = messages[indexPath.row]
     let realMes = corMes.text
     let fUser = corMes.from
     let tUser = corMes.toUser
     let tGroup = corMes.toGroup
-    let 
     
-    
-    if user?.username != nil {
-      cell.mesLabel.text = "\(user!.username!): \(realMes!)"
+    if corMes.from != nil {
+      cell.messageText.text = "\(fUser!.username!): \(realMes!)"
     }
     else {
-      cell.mesLabel.text = "\(realMes!)"
+      cell.messageText.text = "\(realMes!)"
     }
     
     return cell
@@ -67,25 +64,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func onTimer()
   {
-    var query = PFQuery(className: "Message")
-    
-    query.order(byDescending: "createdAt")
-    
-    query.includeKey("text")
-    query.includeKey("user")
-    
-    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
-      if error == nil {
-        if let objects = objects {
-          messages = objects
-        }
-      } else {
-        //
-      }
-    }
-    messageTable.reloadData()
+        messagesTable.reloadData()
   }
-  
   
   @IBAction func exitChat(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
