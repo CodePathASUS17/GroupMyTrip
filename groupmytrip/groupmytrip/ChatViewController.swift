@@ -49,8 +49,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     let corMes = messages[indexPath.row]
     let realMes = corMes.text
     let fUser = corMes.from
-    let tUser = corMes.toUser
-    let tGroup = corMes.toGroup
+    //let tUser = corMes.toUser
+    //let tGroup = corMes.toGroup
     
     if corMes.from != nil {
       cell.messageText.text = "\(fUser!.username!): \(realMes!)"
@@ -72,6 +72,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 
   @IBAction func sendMes(_ sender: Any) {
+    var newMessage = Message()
+    
+    newMessage.text = inputField.text
+    newMessage.from = User.init(user: PFUser.current()!)
+    //newMessage.toUser =
+    //newMessage.isPrivate = false
+    //newMessage.toGroup =
+    messages.append(newMessage)
+    
     
   }
   

@@ -14,8 +14,6 @@ class messagesViewCell: UITableViewCell {
   @IBOutlet weak var fromLabel: UILabel!
   @IBOutlet weak var messageText: UILabel!
   
-  
-  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
